@@ -2,17 +2,17 @@
     background-image: linear-gradient(0deg, rgb(61, 61, 61), rgb(26, 31, 36));
     background-repeat: no-repeat;
     background-size: auto;
-    height: 100vh;
-    overflow-y: hidden;
+    height: 1550vh;
+    overflow-x: scroll;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
-#authed_control_container{
+.authed_control_container{
     border: 1px solid white;
     border-radius: 10px;
     width:800px;
     margin-left:50px;
-    margin-top: 100px;
+    margin-top: 60px;
     height: 300px;
 }
 label{
@@ -24,8 +24,8 @@ label{
     height:24px;
     font-size: 20px;
 }
-#admin_form_main{
-    margin-top:50px;
+.admin_form_main{
+    margin-top:15px;
     width:300px;
     margin-left: 300px;
     margin-right:auto;
@@ -54,24 +54,47 @@ label{
     top:50px;
     margin-left:50px;
 }
-#admin_header{
+.admin_header{
     color:white;
     position: absolute;
     left:150px;
     top:20px;
     font-size: 30px;
 }
-#cur_counts_cont{
+.cur_counts_cont{
     color: white;
     position: absolute;
-    top:180px;
     left:80px;
 }
-#cur_counts_head{
+.cur_counts_head{
     font-size: 20px;
     text-decoration: underline;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 .cur_count{
     font-size: 18px;
+}
+.input_cont{
+    position: relative;
+    top:50px;
+}
+#submit_don_total{
+    padding: 3px;
+    font-size: 18px;
+    width: 100px;
+    position: relative;
+    top:-30px;
+    left:280px;
+}
+.admin_port_submit{
+    padding: 3px;
+    font-size: 18px;
+    width: 100px;
+    position: relative;
+    top:-30px;
+    left:280px;
+}
+.user_section{
+    height:500px;
 }

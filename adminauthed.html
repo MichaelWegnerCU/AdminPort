@@ -9,12 +9,12 @@
 <body class="login_body">
     <div class=" logo_container">
         <img src="./img/4thLogoMain.png" id="logo_4" alt="4wall logo" height="50">
-        <div id="admin_header">Admin Portal</div>
+        <div class="admin_header">Admin Portal</div>
     </div>
-<div id="authed_control_container">
-    <div id="admin_form_main">
-        <div id="cur_counts_cont">
-            <div id="cur_counts_head">
+<div class="authed_control_container">
+    <div class="admin_form_main">
+        <div class="cur_counts_cont">
+            <div class="cur_counts_head">
                 CURRENT COMP VALUES
             </div>
             <div class="cur_count" id="don_count">
@@ -25,12 +25,32 @@
                 meal_count: 
             </div>
         </div>
-        <label for="fname">Update comp donation total:</label><br>
-        <input type="number" id="don_in" name="fname" class="login_box" value=""><br>
-        <input type="submit" value="Submit" id="submit_don_total"><br>
-        <label for="lname">Update meal counter: </label><br>
-        <input type="text" id="meal_in" name="lname" class="login_box" value=""><br><br>
-        <input type="submit" value="Submit" id="submit_meal_count">
+        <div class="input_cont">
+            <label for="fname">Update comp donation total:</label><br>
+            <input type="number" id="don_in" name="fname" class="login_box" value=""><br>
+            <input type="submit" value="Submit" id="submit_don_total"><br>
+            <label for="lname">Update meal counter: </label><br>
+            <input type="text" id="meal_in" name="lname" class="login_box" value=""><br><br>
+            <input type="submit" value="Submit" id="submit_meal_count">
+        </div>
+      
+    </div>
+</div>
+<div class="authed_control_container user_section">
+    <div class="admin_form_main">
+        <div class="cur_counts_cont">
+            <div class="cur_counts_head">
+                CHANGE USER DATA
+            </div>
+            <div class="user_input">
+                <label for="fname">User_name:</label><br>
+                <input id="user_in" name="fname" class="login_box" value=""><br>
+                <input type="submit" value="Submit" id="submit_user_name" class="admin_port_submit"><br>
+            </div>
+            <ul id="myList">
+            </ul>
+        </div>
+       
     </div>
 </div>
 </body>
