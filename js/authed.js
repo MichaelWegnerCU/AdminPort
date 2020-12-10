@@ -196,17 +196,17 @@ async function set_tracking_chart(date_list,bo_track,donations_track,badges_trac
         data: {
           labels: date_list.reverse(),
           datasets: [{ 
-              data: bo_track,
+              data: bo_track.reverse(),
               label: "Box Office",
               borderColor: "#FF5F6D",
               fill: false
             }, { 
-              data: donations_track,
+              data: donations_track.reverse(),
               label: "Donations",
               borderColor: "#5433FF",
               fill: false
             }, { 
-              data: badges_track,
+              data: badges_track.reverse(),
               label: "Badges",
               borderColor: "#AB82F1",
               fill: false
