@@ -146,11 +146,19 @@ async function date_to_period(date_list_working){
     for (i = 0; i < date_list_working.length; i++) {
         date_cur=date_list_working[i];
         //console.log(date_cur);
-        date_cur = date_cur.replace(/,/g, '-');
+        date_cur = date_cur.replace(/,/g, '/');
         date_list_out.push(date_cur);
     }
     //console.log(date_list_out);
     return date_list_out;
+}
+async function null_to_zero(data_in){
+    for (i = 0; i < data_in.length; i++) {
+        if(data_in[i]==null){
+            data_in[i]=0;
+        }
+    }
+    return(data_in);
 }
 
 async function get_tracking_data(){
@@ -175,9 +183,9 @@ async function get_tracking_data(){
                 //console.log(response);
                 
                 let date_list_in=await date_to_period(response.data.date_list);
-                let bo_track_in= response.data.bo_track_pack;
-                let donation_track_in=response.data.donation_track_pack;
-                let badges_track_in=response.data.badge_track_pack;
+                let bo_track_in= await null_to_zero(response.data.bo_track_pack);
+                let donation_track_in=await null_to_zero(response.data.donation_track_pack);
+                let badges_track_in=await null_to_zero(response.data.badge_track_pack);
                 set_tracking_chart(date_list_in,bo_track_in,donation_track_in,badges_track_in);
             });
         }
@@ -217,10 +225,14 @@ async function set_tracking_chart(date_list,bo_track,donations_track,badges_trac
             legend: {
                 position: 'top',
                 labels: {
-                  fontColor: 'white'
+                  fontColor: 'white',
+                  cursor:'pointer'
+                },
+                tooltips: {
+                    mode: 'dataset'
                 },
                 onHover: function(event, legendItem) {
-                  document.getElementById("canvas").style.cursor = 'pointer';
+                  document.getElementById("myChart").style.cursor = 'pointer';
                 },
                 onClick: function(e, legendItem) {
                   var index = legendItem.datasetIndex;
@@ -243,7 +255,7 @@ async function set_tracking_chart(date_list,bo_track,donations_track,badges_trac
         
                   ci.update();
                 },
-              }
+            }
         }
       });
 }
