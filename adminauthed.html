@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>AdminPort</title>
 <link rel="stylesheet" href="./css/authed.css">
+<link rel="stylesheet" href="./css/button.css">
+<link rel="stylesheet" href="./css/loadsymbol.css">
 </head>
 
 <body class="login_body">
@@ -12,7 +14,14 @@
         <div class="admin_header">Admin Portal</div>
     </div>
 <div class="authed_control_container tracking_chart_container">
+    <div class="lds-roller" id="loadsymbol"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     <canvas id="myChart"></canvas>
+</div>
+<div id="chart_size_ctrl">
+    <input type="submit" class="button button2" value="7 days" id="7_days" class="day_size_btn">
+    <input type="submit" class="button button2" value="14 days" id="14_days" class="day_size_btn">
+    <input type="submit" class="button button2"value="1 month" id="1_month" class="day_size_btn">
+
 </div>
 <div class="authed_control_container">
     <div class="admin_form_main">

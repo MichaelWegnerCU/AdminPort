@@ -161,7 +161,7 @@ async function null_to_zero(data_in){
     return(data_in);
 }
 
-async function get_tracking_data(){
+async function get_tracking_data(num_days){
     admin_key= await localStorage.getItem("admin_key");
     console.log("The retrieved key is:",admin_key);
     fetch('https://vidext-c1d58.firebaseapp.com/api/v1/admintrack',{
@@ -170,7 +170,7 @@ async function get_tracking_data(){
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({"admin_key": admin_key})
+        body: JSON.stringify({"admin_key": admin_key,"num_days":num_days})
     })
     .then(function(response) {
         //If the admin key is not provided will get a 401 response
@@ -180,8 +180,7 @@ async function get_tracking_data(){
         else{
             //If the admin track data is returned succesfully
             response.json().then(async function(response) {
-                //console.log(response);
-                
+                console.log("Response: ",response);
                 let date_list_in=await date_to_period(response.data.date_list);
                 let bo_track_in= await null_to_zero(response.data.bo_track_pack);
                 let donation_track_in=await null_to_zero(response.data.donation_track_pack);
@@ -258,7 +257,31 @@ async function set_tracking_chart(date_list,bo_track,donations_track,badges_trac
             }
         }
       });
+      document.getElementById("loadsymbol").style.display = 'none'
 }
 
+document.getElementById("7_days").onclick = function(){//call admin data for 7 days
+    document.getElementById("7_days").className = 'button button_on'
+    document.getElementById("14_days").className = 'button button2';
+    document.getElementById("1_month").className = 'button button2';
+    document.getElementById("loadsymbol").style.display = 'block'
+    get_tracking_data(7);
+};
+document.getElementById("14_days").onclick = function(){//call admin data for 7 days
+    document.getElementById("7_days").className = 'button button2'
+    document.getElementById("14_days").className = 'button button_on';
+    document.getElementById("1_month").className = 'button button2';
+    document.getElementById("loadsymbol").style.display = 'block'
+    get_tracking_data(14);
+};
+document.getElementById("1_month").onclick = function(){//call admin data for 7 days
+    document.getElementById("7_days").className = 'button button2'
+    document.getElementById("14_days").className = 'button button2';
+    document.getElementById("1_month").className = 'button button_on';
+    document.getElementById("loadsymbol").style.display = 'block'
+    get_tracking_data(21);
+};
+
+
 set_tracking_chart();
-get_tracking_data();
+get_tracking_data(7);

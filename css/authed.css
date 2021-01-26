@@ -18,6 +18,13 @@
 .tracking_chart_container{
     height: 400px;
 }
+#chart_size_ctrl{
+    margin-left: 450px;
+    margin-top: 20px;
+}
+.day_size_btn{
+    width:100px;
+}
 label{
     color:white;
     font-size: 20px;
@@ -60,8 +67,8 @@ label{
 .admin_header{
     color:white;
     position: absolute;
-    left:150px;
-    top:20px;
+    left:200px;
+    top:0px;
     font-size: 30px;
 }
 .cur_counts_cont{
