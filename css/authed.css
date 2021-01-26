@@ -97,14 +97,12 @@ label{
     top:-30px;
     left:280px;
 }
-.admin_port_submit{
-    padding: 3px;
-    font-size: 18px;
-    width: 100px;
-    position: relative;
-    top:-30px;
-    left:280px;
-}
+
 .user_section{
     height:500px;
 }
+
+input[type=submit] {
+    cursor: pointer;
+  }
+  

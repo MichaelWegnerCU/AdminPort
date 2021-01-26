@@ -1,11 +1,18 @@
 .lds-roller {
 display: none;
   position: absolute;
-  left: 750px;
-  top:150px;
   width: 120px;
   height: 120px;
 
+}
+#loadsymbol_1{
+    left: 750px;
+    top:150px;
+}
+#loadsymbol_2{
+    display: none;
+    left: 450px;
+    top:75px;
 }
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;

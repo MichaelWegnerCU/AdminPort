@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./css/authed.css">
 <link rel="stylesheet" href="./css/button.css">
 <link rel="stylesheet" href="./css/loadsymbol.css">
+<link rel="icon" type="image/png" href="./img/key.png"/>
 </head>
 
 <body class="login_body">
@@ -14,7 +15,7 @@
         <div class="admin_header">Admin Portal</div>
     </div>
 <div class="authed_control_container tracking_chart_container">
-    <div class="lds-roller" id="loadsymbol"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="lds-roller" id="loadsymbol_1"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     <canvas id="myChart"></canvas>
 </div>
 <div id="chart_size_ctrl">
@@ -27,7 +28,7 @@
     <div class="admin_form_main">
         <div class="cur_counts_cont">
             <div class="cur_counts_head">
-                CURRENT COMP VALUES
+                Current donation and meal count
             </div>
             <div class="cur_count" id="don_count">
                 donation_total: 
@@ -40,10 +41,10 @@
         <div class="input_cont">
             <label for="fname">Update comp donation total:</label><br>
             <input type="number" id="don_in" name="fname" class="login_box" value=""><br>
-            <input type="submit" value="Submit" id="submit_don_total"><br>
+            <input type="submit" class="button button2" value="Submit" id="submit_don_total"><br>
             <label for="lname">Update meal counter: </label><br>
             <input type="text" id="meal_in" name="lname" class="login_box" value=""><br><br>
-            <input type="submit" value="Submit" id="submit_meal_count">
+            <input type="submit" class="button button2" value="Submit" id="submit_meal_count">
         </div>
       
     </div>
@@ -52,13 +53,14 @@
     <div class="admin_form_main">
         <div class="cur_counts_cont">
             <div class="cur_counts_head">
-                CHANGE USER DATA
+                Get User Data
             </div>
             <div class="user_input">
                 <label for="fname">User_name:</label><br>
                 <input id="user_in" name="fname" class="login_box" value=""><br>
-                <input type="submit" value="Submit" id="submit_user_name" class="admin_port_submit"><br>
+                <input type="submit" value="Submit"  id="submit_user_name" class="admin_port_submit button button2"><br>
             </div>
+            <div class="lds-roller" id="loadsymbol_2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             <ul id="myList">
             </ul>
         </div>

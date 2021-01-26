@@ -92,6 +92,7 @@ async function submit_meal_count(){
 
 async function submit_user_name(){
     console.log("The retrieved key is:",admin_key);
+    document.getElementById("loadsymbol_2").style.display = 'block'
     fetch('https://vidext-c1d58.firebaseapp.com/api/v1/adminusername',{
         method: 'POST',
         headers: {
@@ -117,6 +118,7 @@ async function submit_user_name(){
                         document.getElementById("myList").appendChild(node);
                     }
                 }
+                document.getElementById("loadsymbol_2").style.display = 'none'
                 //console.log(response.data[0]);
             });
         }
@@ -163,6 +165,7 @@ async function null_to_zero(data_in){
 
 async function get_tracking_data(num_days){
     admin_key= await localStorage.getItem("admin_key");
+    document.getElementById("loadsymbol_1").style.display = 'block'
     console.log("The retrieved key is:",admin_key);
     fetch('https://vidext-c1d58.firebaseapp.com/api/v1/admintrack',{
         method: 'POST',
@@ -257,28 +260,25 @@ async function set_tracking_chart(date_list,bo_track,donations_track,badges_trac
             }
         }
       });
-      document.getElementById("loadsymbol").style.display = 'none'
+      document.getElementById("loadsymbol_1").style.display = 'none'
 }
 
 document.getElementById("7_days").onclick = function(){//call admin data for 7 days
     document.getElementById("7_days").className = 'button button_on'
     document.getElementById("14_days").className = 'button button2';
     document.getElementById("1_month").className = 'button button2';
-    document.getElementById("loadsymbol").style.display = 'block'
     get_tracking_data(7);
 };
 document.getElementById("14_days").onclick = function(){//call admin data for 7 days
     document.getElementById("7_days").className = 'button button2'
     document.getElementById("14_days").className = 'button button_on';
     document.getElementById("1_month").className = 'button button2';
-    document.getElementById("loadsymbol").style.display = 'block'
     get_tracking_data(14);
 };
 document.getElementById("1_month").onclick = function(){//call admin data for 7 days
     document.getElementById("7_days").className = 'button button2'
     document.getElementById("14_days").className = 'button button2';
     document.getElementById("1_month").className = 'button button_on';
-    document.getElementById("loadsymbol").style.display = 'block'
     get_tracking_data(21);
 };
 
